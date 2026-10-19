@@ -9,7 +9,7 @@
     <div class="container">
       <div class="columns">
 
-        {{-- Datos de contacto --}}
+
         <div class="column is-5">
           <div class="card tarjeta">
             <div class="card-content">
@@ -22,7 +22,7 @@
           </div>
         </div>
 
-        {{-- Formulario (solo demostración, no guarda nada) --}}
+
         <div class="column is-7">
           <div class="card tarjeta">
             <div class="card-content">

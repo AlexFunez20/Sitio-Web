@@ -4,7 +4,7 @@
 
 @section('contenido')
 
-  {{-- Hero --}}
+
   <section class="hero is-medium fondo-atardecer">
     <div class="hero-body">
       <div class="container">
@@ -22,7 +22,7 @@
     </div>
   </section>
 
-  {{-- Próximos eventos (solo 3) --}}
+
   <section class="section">
     <div class="container">
       <h2 class="title is-3 has-text-centered">Próximos eventos</h2>
@@ -33,7 +33,7 @@
     </div>
   </section>
 
-  {{-- Cómo participar --}}
+
   <section class="section" id="como-participar">
     <div class="container">
       <h2 class="title is-3 has-text-centered">Cómo participar</h2>
