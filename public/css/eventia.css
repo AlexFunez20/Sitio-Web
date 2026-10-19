@@ -1,0 +1,50 @@
+:root {
+  --petroleo: #18383d;
+  --naranja: #e9a06b;
+  --sol: #f4d9a5;
+  --turquesa: #568b87;
+  --turquesa-oscuro: #356c69;
+  --arena: #f7f6f2;
+  --rojo: #a64a3f;
+}
+
+body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--arena); color: var(--petroleo); }
+.title, .subtitle, h1, h2, h3 { color: var(--petroleo); }
+
+/* Menú */
+.barra, .barra .navbar-menu { background: #fff; box-shadow: 0 1px 8px rgb(24 56 61 / 8%); }
+.barra .navbar-item, .barra .navbar-burger { color: var(--petroleo); font-size: 0.95rem; }
+.barra .navbar-item:hover, .barra .navbar-item.is-active { background: transparent; color: var(--turquesa-oscuro); }
+.barra .navbar-item.is-active { font-weight: 700; }
+.barra .logo { color: var(--petroleo); font-weight: 700; letter-spacing: 0.02em; }
+
+/* Hero y cabeceras */
+.fondo-atardecer { background: #eee9df; }
+.fondo-atardecer .hero-body { padding-top: 5rem; padding-bottom: 5rem; }
+.fondo-atardecer .title { max-width: 14ch; }
+.cabecera { background: #eee9df; }
+.cabecera .hero-body { padding-top: 3rem; padding-bottom: 3rem; }
+
+/* Botones del hero */
+.boton-oscuro { background: var(--petroleo); color: #fff; border: 1px solid var(--petroleo); }
+.boton-oscuro:hover { background: var(--turquesa-oscuro); color: #fff; border-color: var(--turquesa-oscuro); }
+.boton-borde { background: transparent; color: var(--petroleo); border: 1px solid #aeb8b5; }
+
+/* Tarjetas (eventos, boletos, pasos, galería) */
+.tarjeta {
+  background: #fff;
+  height: 100%;
+  border: 1px solid #e7e5df;
+  border-radius: 8px;
+  box-shadow: none;
+}
+.precio { color: var(--rojo); font-weight: 700; font-size: 1.15rem; }
+.contacto-dato { margin-bottom: 0.75rem; }
+.galeria-item { min-height: 150px; display: flex; align-items: end; background: #eee9df; color: var(--petroleo); font-weight: 600; }
+
+/* Galería y sello */
+.nosotros-destacado { padding: 1.5rem; border-left: 3px solid var(--turquesa); background: #fff; }
+
+/* Pie */
+.pie { background: #fff; color: #657471; padding: 2rem 1.5rem; border-top: 1px solid #e7e5df; }
+.pie p + p { margin-top: 0.35rem; font-size: 0.9rem; }
