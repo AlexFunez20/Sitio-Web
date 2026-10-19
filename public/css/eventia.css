@@ -11,26 +11,24 @@
 body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--arena); color: var(--petroleo); }
 .title, .subtitle, h1, h2, h3 { color: var(--petroleo); }
 
-/* Menú */
+
 .barra, .barra .navbar-menu { background: var(--petroleo); box-shadow: 0 1px 8px rgb(10 59 69 / 16%); }
 .barra .navbar-item, .barra .navbar-burger { color: #fff; font-size: 0.95rem; }
 .barra .navbar-item:hover, .barra .navbar-item.is-active { background: transparent; color: var(--sol); }
 .barra .navbar-item.is-active { font-weight: 700; }
 .barra .logo { color: var(--sol); font-weight: 700; letter-spacing: 0.02em; }
 
-/* Hero y cabeceras */
+
 .fondo-atardecer { background: linear-gradient(135deg, var(--naranja), var(--sol)); }
 .fondo-atardecer .hero-body { padding-top: 5rem; padding-bottom: 5rem; }
 .fondo-atardecer .title { max-width: 14ch; }
 .cabecera { background: linear-gradient(135deg, var(--naranja), var(--sol)); }
 .cabecera .hero-body { padding-top: 3rem; padding-bottom: 3rem; }
 
-/* Botones del hero */
 .boton-oscuro { background: var(--petroleo); color: #fff; border: 1px solid var(--sol); }
 .boton-oscuro:hover { background: var(--turquesa-oscuro); color: #fff; border-color: var(--turquesa-oscuro); }
 .boton-borde { background: transparent; color: var(--petroleo); border: 1px solid var(--petroleo); }
 
-/* Tarjetas (eventos, boletos, pasos, galería) */
 .tarjeta {
   background: #fff;
   height: 100%;
@@ -45,9 +43,7 @@ body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sa
 .icono-galeria { margin-bottom: 0.75rem; font-size: 2rem; }
 .icono-boleto { margin-bottom: 1rem; font-size: 2rem; }
 
-/* Galería y sello */
 .nosotros-destacado { padding: 1.5rem; border-left: 3px solid var(--turquesa); background: #fff; }
 
-/* Pie */
 .pie { background: var(--petroleo); color: var(--arena); padding: 2rem 1.5rem; border-top: 3px solid var(--turquesa); }
 .pie p + p { margin-top: 0.35rem; font-size: 0.9rem; }

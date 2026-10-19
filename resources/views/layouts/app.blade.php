@@ -10,7 +10,6 @@
 </head>
 <body class="has-navbar-fixed-top">
 
-  {{-- Menú fijo --}}
   <nav class="navbar is-fixed-top barra">
     <div class="navbar-brand">
       <a class="navbar-item logo" href="{{ route('inicio') }}">Eventia</a>
@@ -33,7 +32,6 @@
     </div>
   </nav>
 
-  {{-- Aquí se inserta el contenido de cada página --}}
   @yield('contenido')
 
   <footer class="footer pie has-text-centered">
@@ -41,7 +39,6 @@
     <p>Conciertos, festivales y celebraciones en Honduras</p>
   </footer>
 
-  {{-- Abre y cierra el menú en celular --}}
   <script>
     document.getElementById('burger').addEventListener('click', function () {
       this.classList.toggle('is-active');
