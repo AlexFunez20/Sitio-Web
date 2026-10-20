@@ -3,45 +3,25 @@
 @section('titulo', 'Boletos')
 
 @section('contenido')
-  @include('partials.cabecera', ['titulo' => 'Tipos de boletos', 'subtitulo' => 'Precios ilustrativos, pueden variar según el evento'])
+  @include('partials.cabecera', ['titulo' => 'Tipos de boletos', 'subtitulo' => 'Precios según cada evento'])
 
   <section class="section">
     <div class="container">
-      <div class="columns">
-
-        <div class="column is-4">
-          <div class="card tarjeta">
-            <div class="card-content has-text-centered">
-              <i class="fa-solid fa-ticket icono-boleto" aria-hidden="true"></i>
-              <h3 class="title is-4">General</h3>
-              <p class="precio">L 250</p>
-              <p>Entrada al evento y zona general.</p>
+      <div class="columns is-multiline">
+        @php($tipos = \App\Models\TipoBoleto::query()->where('activo', true)->whereHas('evento', fn ($query) => $query->where('estado', 'publicado'))->with('evento')->orderBy('precio')->get())
+        @foreach ($tipos as $tipo)
+          <div class="column is-4">
+            <div class="card tarjeta">
+              <div class="card-content has-text-centered">
+                <i class="fa-solid fa-ticket icono-boleto" aria-hidden="true"></i>
+                <h3 class="title is-4">{{ $tipo->nombre }}</h3>
+                <p class="precio">L {{ number_format($tipo->precio, 2) }}</p>
+                <p class="has-text-weight-semibold">{{ $tipo->evento->nombre }}</p>
+                <p class="mt-2">{{ $tipo->descripcion ?: 'Acceso al evento con este tipo de entrada.' }}</p>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="column is-4">
-          <div class="card tarjeta">
-            <div class="card-content has-text-centered">
-              <i class="fa-solid fa-star icono-boleto" aria-hidden="true"></i>
-              <h3 class="title is-4">Preferencial</h3>
-              <p class="precio">L 450</p>
-              <p>Mejor ubicación y acceso rápido.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="column is-4">
-          <div class="card tarjeta">
-            <div class="card-content has-text-centered">
-              <i class="fa-solid fa-crown icono-boleto" aria-hidden="true"></i>
-              <h3 class="title is-4">VIP</h3>
-              <p class="precio">L 900</p>
-              <p>Zona exclusiva, bebidas y atención especial.</p>
-            </div>
-          </div>
-        </div>
-
+        @endforeach
       </div>
     </div>
   </section>

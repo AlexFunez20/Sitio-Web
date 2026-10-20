@@ -8,19 +8,18 @@
   <section class="section">
     <div class="container">
       <div class="columns is-multiline">
-        @foreach ([
-          ['nombre' => 'Conciertos en vivo', 'icono' => 'fa-music'],
-          ['nombre' => 'Festivales', 'icono' => 'fa-ticket'],
-          ['nombre' => 'Música y cultura', 'icono' => 'fa-masks-theater'],
-          ['nombre' => 'Noches especiales', 'icono' => 'fa-moon'],
-          ['nombre' => 'Eventos familiares', 'icono' => 'fa-people-group'],
-          ['nombre' => 'Celebraciones', 'icono' => 'fa-champagne-glasses'],
-        ] as $momento)
+        @php($fotos = \App\Models\GaleriaFotos::query()->where('publicada', true)->with('evento')->orderBy('orden')->get())
+        @foreach ($fotos as $foto)
           <div class="column is-6-mobile is-4-tablet">
-            <div class="card tarjeta galeria-item">
-              <div class="card-content has-text-centered">
-                <i class="fa-solid {{ $momento['icono'] }} icono-galeria" aria-hidden="true"></i>
-                <p>{{ $momento['nombre'] }}</p>
+            <div class="card tarjeta">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="{{ \Illuminate\Support\Str::startsWith($foto->imagen, ['http://', 'https://']) ? $foto->imagen : \Illuminate\Support\Facades\Storage::url($foto->imagen) }}" alt="{{ $foto->titulo }}" style="object-fit: cover;">
+                </figure>
+              </div>
+              <div class="card-content">
+                <p class="has-text-weight-semibold">{{ $foto->titulo }}</p>
+                <p class="mt-1">{{ $foto->evento->nombre ?? 'Evento especial' }}</p>
               </div>
             </div>
           </div>

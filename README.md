@@ -7,6 +7,24 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Eventia: datos y administración
+
+Las páginas de eventos, boletos, galería y pasos para participar muestran registros de la base de datos. Para cargar datos iniciales sin borrar los existentes:
+
+```bash
+php artisan migrate
+php artisan db:seed
+php artisan storage:link
+```
+
+El panel de administración de Filament está disponible en `/admin`. Crea una cuenta desde la terminal:
+
+```bash
+php artisan make:filament-user
+```
+
+Desde el panel se pueden administrar eventos, categorías, boletos, galería, pasos para participar y mensajes de contacto. El dashboard muestra totales de las tablas principales.
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:

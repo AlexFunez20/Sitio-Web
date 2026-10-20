@@ -3,8 +3,6 @@
 @section('titulo', 'Inicio')
 
 @section('contenido')
-
-
   <section class="hero is-medium fondo-atardecer">
     <div class="hero-body">
       <div class="container">
@@ -22,7 +20,6 @@
     </div>
   </section>
 
-
   <section class="section">
     <div class="container">
       <h2 class="title is-3 has-text-centered">Próximos eventos</h2>
@@ -33,22 +30,17 @@
     </div>
   </section>
 
-
   <section class="section" id="como-participar">
     <div class="container">
       <h2 class="title is-3 has-text-centered">Cómo participar</h2>
       <div class="columns is-multiline">
-        @foreach ([
-          ['Consulta los eventos', 'Revisa fechas, lugares y precios.'],
-          ['Elige tu boleto', 'General, Preferencial o VIP.'],
-          ['Contáctanos', 'Escríbenos o llámanos para reservar.'],
-          ['Disfruta', 'Llega y vive la experiencia.'],
-        ] as $paso)
+        @php($pasos = \App\Models\ComoParticipar::query()->where('activo', true)->orderBy('orden')->get())
+        @foreach ($pasos as $paso)
           <div class="column is-3">
             <div class="card tarjeta">
               <div class="card-content has-text-centered">
-                <h3 class="title is-5">{{ $paso[0] }}</h3>
-                <p>{{ $paso[1] }}</p>
+                <h3 class="title is-5">{{ $paso->titulo }}</h3>
+                <p>{{ $paso->descripcion }}</p>
               </div>
             </div>
           </div>
@@ -56,5 +48,4 @@
       </div>
     </div>
   </section>
-
 @endsection
